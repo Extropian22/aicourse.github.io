@@ -295,3 +295,15 @@ footer {
   }
 
 }
+
+
+/* Responsive Chatbot Styles */
+@media (max-width: 600px) {
+    iframe[src*="vectorshift.ai"] {
+        width: 100% !important; /* Full width on smaller screens */
+        height: 400px !important; /* Reduced height */
+      margin: 0 !important; /* no margin on mobile */
+      bottom: 0 !important; /* Position at the bottom */
+        right: 0 !important;
+    }
+}
