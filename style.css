@@ -307,3 +307,28 @@ footer {
         right: 0 !important;
     }
 }
+/* Video Container Styles */
+.video-container {
+  position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    padding-top: 25px;
+    height: 0;
+    overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+/* Free PDF Module Styles */
+.free-pdf-module {
+    text-align: center;
+    padding: 30px;
+    background: rgba(0, 255, 255, 0.1);
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
