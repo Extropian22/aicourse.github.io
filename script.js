@@ -12,11 +12,15 @@ document.addEventListener('DOMContentLoaded', function(){
           }, index * 250);
        });
     }
+
    // Get elements
     const verifyPaymentButton = document.getElementById('verify-payment');
     const downloadSection = document.getElementById('download-section');
     const paymentForm = document.getElementById('payment-form');
-     // Add event listener for verify payment
+       const claimPdfButton = document.getElementById('claim-pdf');
+          const pdfIframe = document.getElementById('pdf-iframe');
+
+    // Add event listener for verify payment
     paymentForm.addEventListener('submit', function(event){
       event.preventDefault();
         downloadSection.style.display = 'block';
@@ -25,6 +29,12 @@ document.addEventListener('DOMContentLoaded', function(){
         const email = emailInput.value
         console.log('Email receipt sent to:', email);
         alert('Please check your email for receipt!');
+    });
+
+    // Add event listener for claim PDF
+     claimPdfButton.addEventListener('click', function(){
+       pdfIframe.style.display = 'block';
+        claimPdfButton.style.display = 'none';
     });
 
 
