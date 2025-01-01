@@ -4,10 +4,10 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    background: #000; /* Dark background for space theme */
-    color: #f0f0f0; /* Light text for contrast */
-    overflow-x: hidden; /* Prevent horizontal scroll */
-    position: relative;/* Required for animated background positioning */
+    background: #000;
+    color: #f0f0f0;
+    overflow-x: hidden;
+    position: relative;
      cursor: none; /* Hide the default cursor */
 }
 body::before {
@@ -19,23 +19,23 @@ body::before {
     height: 100%;
    background-image: url('assets/img/space.jpg');
   background-size: cover;
-   filter: blur(5px);
+    filter: blur(5px);
     opacity: 0.2;
   z-index: -1;
   animation: starTwinkle 120s linear infinite;
 }
 /* Text Selection Color */
 ::selection {
-  background: #00ffff; /* Custom selection color */
-  color: black; /* Custom selection text color */
+  background: #00ffff;
+  color: black;
 }
 
 /* Typography adjustments */
 h1, h2 {
     text-align: center;
     margin-bottom: 20px;
-    color: #00ffff; /* Neon blue for headers */
-    text-shadow: 0 0 10px #00ffff; /* Subtle neon glow */
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
     font-family: 'Oswald', sans-serif;
     font-weight: 400;
 
@@ -47,10 +47,10 @@ p {
 
 /* Header and Navigation */
 header {
-    background: rgba(0, 0, 0, 0.8); /* Slightly transparent background */
+    background: rgba(0, 0, 0, 0.8);
     padding: 1em 0;
-    backdrop-filter: blur(5px); /* Blur for layered effect */
-    position: sticky; /* Make the header sticky */
+    backdrop-filter: blur(5px);
+    position: sticky;
     top: 0;
     z-index: 10;
 }
@@ -71,17 +71,17 @@ nav a {
     color: #fff;
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s ease; /* Smooth color transition */
+    transition: color 0.3s ease;
 }
 
 nav a:hover {
-    color: #00ffff; /* Highlight on hover */
+    color: #00ffff;
 }
 
 /* Main Content Area */
 main {
     padding: 40px;
-    max-width: 1200px; /* Wider max-width for larger screens */
+    max-width: 1200px;
     margin: 0 auto;
     position: relative;
 }
@@ -158,7 +158,7 @@ main {
 }
 
 .cta-button:hover {
-    background: #00b3b3; /* Slightly darker shade on hover */
+    background: #00b3b3;
     color: #fff;
 }
 
@@ -302,10 +302,10 @@ footer {
 /* Responsive Chatbot Styles */
 @media (max-width: 600px) {
     iframe[src*="vectorshift.ai"] {
-        width: 100% !important; /* Full width on smaller screens */
-        height: 400px !important; /* Reduced height */
-      margin: 0 !important; /* no margin on mobile */
-      bottom: 0 !important; /* Position at the bottom */
+        width: 100% !important;
+        height: 400px !important;
+      margin: 0 !important;
+      bottom: 0 !important;
         right: 0 !important;
     }
 }
@@ -382,20 +382,30 @@ footer {
 /* Cursor Animation */
 body::after {
     content: '';
-    position: fixed; /* Fixed to the viewport */
+    position: fixed;
     left: 0;
     top: 0;
-    width: 15px;  /* Size of the cursor circle */
-    height: 15px; /* Size of the cursor circle */
-    background-color: rgba(0, 255, 255, 0.8);  /* Color of cursor circle*/
-    border-radius: 50%; /* Make it a circle */
-    pointer-events: none; /* Cursor should not interfere with clicks */
-    transform: translate(-50%, -50%); /* Center the circle on cursor */
-    z-index: 1000; /* Make it on the top */
-     transition: transform 0.1s ease;
+    width: 15px;
+    height: 15px;
+    background-color: rgba(0, 255, 255, 0.8);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
     mix-blend-mode: difference;
 }
+
 /* Cursor Hover Animation */
-body:hover::after{
-   transform: translate(-50%, -50%) scale(3);
+body:hover::after {
+     transform: translate(-50%, -50%) scale(3);
+    transition: transform 0.2s ease;
+}
+body:not(:hover)::after{
+    transition: transform 0.2s ease;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+body:active::after{
+  background-color: rgba(0, 255, 255, 0.9);
+     transform: translate(-50%, -50%) scale(1.3);
 }
