@@ -78,11 +78,16 @@
 
             <p>Once you have sent the payment click on the button below:</p>
 
-             <button id="verify-payment" class="cta-button">Verify Payment</button>
+             <form id="payment-form">
+                <label for="receipt-email">Enter your Email for the Receipt:</label>
+                  <input type="email" id="receipt-email" name="receipt-email" required >
+                 <button id="verify-payment" class="cta-button" >Verify Payment</button>
+            </form>
+
 
              <div id="download-section" style="display: none;">
                 <p>Check out your free guide:</p>
-                   <iframe src="https://docs.google.com/document/d/e/2PACX-1vR_qu2NSXfVc0UOhUrAnyH6Zyk8rJwpDGb_vOwydKow-rim96cB7kTQvC1NYbHgYe1fGmGShlj4ZlNy/pub?embedded=true"></iframe>
+                <iframe src="https://docs.google.com/document/d/e/2PACX-1vR_qu2NSXfVc0UOhUrAnyH6Zyk8rJwpDGb_vOwydKow-rim96cB7kTQvC1NYbHgYe1fGmGShlj4ZlNy/pub?embedded=true"></iframe>
              </div>
          </section>
 
@@ -92,7 +97,7 @@
     <footer>
         <p>© 2023 AI Code Editing Mastery. All Rights Reserved.</p>
     </footer>
-    <iframe
+     <iframe
         src="https://app.vectorshift.ai/chatbots/embedded/676ebbc52bf259caa88fda66?openChatbot=true"
         width="500px"
         height="600px"
