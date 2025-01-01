@@ -25,17 +25,33 @@ document.addEventListener('DOMContentLoaded', function(){
       event.preventDefault();
         downloadSection.style.display = 'block';
         paymentForm.style.display = 'none';
-     const emailInput = document.getElementById('receipt-email');
+
+      const emailInput = document.getElementById('receipt-email');
         const email = emailInput.value
-        console.log('Email receipt sent to:', email);
-        alert('Please check your email for receipt!');
+
+        // Formspree submission
+        const formspreeUrl = 'https://formspree.io/f/xwpkzdgq';
+      fetch(formspreeUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                 'Accept': 'application/json'
+
+            },
+            body: JSON.stringify({ email: email}),
+        }).then(response => {
+            if (response.ok) {
+                console.log('Payment verification email sent to formspree.');
+                 alert('Payment Verified, click the "Claim PDF" button.');
+
+            } else {
+                console.error('Error sending verification data to Formspree.');
+                  alert('Error verifying payment.');
+            }
+        }).catch(error => {
+             console.error('Error sending verification data to Formspree',error);
+              alert('Error verifying payment.');
+        });
+
     });
-
-    // Add event listener for claim PDF
-     claimPdfButton.addEventListener('click', function(){
-       pdfIframe.style.display = 'block';
-        claimPdfButton.style.display = 'none';
     });
-
-
-  });
