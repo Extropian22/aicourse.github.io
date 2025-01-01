@@ -8,7 +8,6 @@ body {
     color: #f0f0f0;
     overflow-x: hidden;
     position: relative;
-     cursor: none; /* Hide the default cursor */
 }
 body::before {
     content: '';
@@ -377,35 +376,4 @@ footer {
   to {
        background-position: 1000px 1000px;
     }
-}
-
-/* Cursor Animation */
-body::after {
-    content: '';
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 15px;
-    height: 15px;
-    background-color: rgba(0, 255, 255, 0.8);
-    border-radius: 50%;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    z-index: 1000;
-    mix-blend-mode: difference;
-}
-
-/* Cursor Hover Animation */
-body:hover::after {
-     transform: translate(-50%, -50%) scale(3);
-    transition: transform 0.2s ease;
-}
-body:not(:hover)::after{
-    transition: transform 0.2s ease;
-  transform: translate(-50%, -50%) scale(1);
-}
-
-body:active::after{
-  background-color: rgba(0, 255, 255, 0.9);
-     transform: translate(-50%, -50%) scale(1.3);
 }
