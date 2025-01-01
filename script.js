@@ -12,5 +12,20 @@ document.addEventListener('DOMContentLoaded', function(){
           }, index * 250);
        });
     }
+   // Get elements
+    const verifyPaymentButton = document.getElementById('verify-payment');
+    const downloadSection = document.getElementById('download-section');
+    const paymentForm = document.getElementById('payment-form');
+     // Add event listener for verify payment
+    paymentForm.addEventListener('submit', function(event){
+      event.preventDefault();
+        downloadSection.style.display = 'block';
+        paymentForm.style.display = 'none';
+     const emailInput = document.getElementById('receipt-email');
+        const email = emailInput.value
+        console.log('Email receipt sent to:', email);
+        alert('Please check your email for receipt!');
+    });
+
 
   });
